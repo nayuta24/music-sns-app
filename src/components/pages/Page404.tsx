@@ -1,3 +1,3 @@
 export const Page404 = () => {
-  return <h1>ページがみつかりません</h1>;
+  return <h1>Page404</h1>;
 };

@@ -5,7 +5,7 @@ import {
   DrawerContent,
   DrawerBody,
 } from "@chakra-ui/react";
-import { MenuContents } from "../molecules/MenuContents";
+import { MenuContents } from "../../molecules/MenuContents";
 
 type Props = {
   onClose: () => void;
