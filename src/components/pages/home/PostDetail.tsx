@@ -48,7 +48,7 @@ export const PostDetail: VFC<Props> = (props) => {
       </Flex>
       <Box mt={5} textAlign="left">
         <Text fontSize="lg" fontWeight="bold">
-          時代を変えた一曲
+          キリンジ最高！
         </Text>
         <Text fontSize="sm" pr={10} mt={2}>
           「愛をあるだけ、すべて」の中でも一番好きな曲です！

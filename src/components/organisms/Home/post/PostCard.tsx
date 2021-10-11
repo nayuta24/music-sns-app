@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, VFC } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 
 import { CardMusicBox } from "../../../molecules/post_card/CardMusicBox";
@@ -8,21 +8,24 @@ import { CardReactionButtons } from "../../../molecules/post_card/CardReactionBu
 import { UserInfoBox } from "../../../molecules/UserInfoBox";
 import { CardFrame } from "../../../atoms/frame/CardFrame";
 import { useHistory } from "react-router";
+import { PostsDataType } from "../../../../type/api/PostsDataType";
 
-export const PostCard = memo(() => {
+type Props = {
+  post: PostsDataType;
+};
+
+export const PostCard: VFC<Props> = memo((props) => {
+  const { post } = props;
+  const { user, track, review, reaction, id } = post;
   const history = useHistory();
   const onClickCard = () => {
-    history.push("/home/post/1");
+    history.push(`/home/post/${id}`);
   };
 
   return (
     <CardFrame mb="10px" onClick={onClickCard}>
       {/* 曲情報 */}
-      <CardMusicBox
-        img="https://i.scdn.co/image/ab67616d00001e029259361b006ad3108801a541"
-        title="時間がない"
-        artist="キリンジ"
-      />
+      <CardMusicBox img={track.img} title={track.title} artist={track.artist} />
       <Flex
         w="70%"
         h="100%"
@@ -32,24 +35,22 @@ export const PostCard = memo(() => {
         ml="30px"
       >
         {/* コメント */}
-        <CardComment
-          title="キリンジ最高！"
-          body="「愛をあるだけ、すべて」の中でも一番好きな曲です！
-                  弓木さんのファンキーなカッティングと高樹さんのコーラスがたまりません！！
-                  つい何度も、リピートして聞いてしまいま..."
-        />
+        <CardComment title={review.title} body={review.body} />
         <Flex>
           <Box w="50%">
             {/* 評価 */}
             <Rating />
             {/* 投稿へのコメント、いいねなど */}
-            <CardReactionButtons comment_val={3} like_val={11} />
+            <CardReactionButtons
+              comment_val={reaction.comment_val}
+              like_val={reaction.like_val}
+            />
           </Box>
           {/* コメントしたユーザー */}
           <UserInfoBox
-            img="https://source.unsplash.com/brFsZ7qszSY"
-            name="中村 優太"
-            user_title="学生"
+            img={user.img}
+            name={user.name}
+            user_title={user.job}
             pl="30px"
             pt="20px"
           />
