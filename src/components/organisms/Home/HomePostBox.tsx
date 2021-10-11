@@ -24,7 +24,7 @@ export const HomePostBox: VFC<Props> = memo((props) => {
 
   return (
     <Flex
-      w={{ base: "700px", md: "700px" }}
+      w={{ base: "100%", md: "700px" }}
       h="100%"
       borderX={{ base: "none", md: "1px" }}
       borderColor={{ md: "gray.200" }}
