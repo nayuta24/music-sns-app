@@ -43,7 +43,7 @@ export const PostCard = memo(() => {
             {/* 評価 */}
             <Rating />
             {/* 投稿へのコメント、いいねなど */}
-            <CardReactionButtons comment={3} like={11} />
+            <CardReactionButtons comment_val={3} like_val={11} />
           </Box>
           {/* コメントしたユーザー */}
           <UserInfoBox

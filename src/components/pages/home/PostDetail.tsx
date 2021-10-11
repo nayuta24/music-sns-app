@@ -1,21 +1,12 @@
 import { VFC } from "react";
 import { useParams } from "react-router";
-import {
-  AspectRatio,
-  Flex,
-  Text,
-  Box,
-  Divider,
-  IconButton,
-} from "@chakra-ui/react";
-import { ChatIcon } from "@chakra-ui/icons";
-import { BsShareFill } from "react-icons/bs";
-import { GoHeart } from "react-icons/go";
+import { AspectRatio, Flex, Text, Box, Divider } from "@chakra-ui/react";
 import { useSetRecoilState } from "recoil";
 
 import { UserInfoBox } from "../../molecules/UserInfoBox";
 import { Rating } from "../../atoms/button/Rating";
 import { homeState } from "../../../store/homeState";
+import { ReactionButtons } from "../../molecules/post_detail/ReactionButtons";
 
 type Param = {
   id: string;
@@ -65,42 +56,7 @@ export const PostDetail: VFC<Props> = (props) => {
           つい何度もリピートして聞いてしまいます。
         </Text>
       </Box>
-      <Divider orientation="horizontal" w="100%" mt={5} mb="5" />
-      <Flex justifyContent="center" w="80%">
-        <Flex mr="auto">
-          <IconButton
-            aria-label="comment"
-            icon={<ChatIcon />}
-            size="0px"
-            color="gray"
-            bg="none"
-          />
-          <Text fontSize="15px" color="gray" ml="5px">
-            11
-          </Text>
-        </Flex>
-        <Flex mx="auto">
-          <IconButton
-            aria-label="like"
-            icon={<GoHeart size="25px" />}
-            size="0px"
-            color="gray"
-            bg="none"
-          />
-          <Text fontSize="15px" color="gray" ml="5px">
-            3
-          </Text>
-        </Flex>
-        <Flex ml="auto">
-          <IconButton
-            aria-label="like"
-            icon={<BsShareFill />}
-            size="0px"
-            color="gray"
-            bg="none"
-          />
-        </Flex>
-      </Flex>
+      <ReactionButtons comment_val={3} like_val={11} />
       <Divider orientation="horizontal" w="100%" mt={5} mb="5" />
     </Box>
   );

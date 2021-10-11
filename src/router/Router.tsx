@@ -1,5 +1,4 @@
 import { Route, Switch } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
 
 import { homeRoutes } from "./HomeRoutes";
 import { HomeLayout } from "../components/templates/HomeLayout";
