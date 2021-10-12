@@ -24,22 +24,23 @@ export const HomePostBox: VFC<Props> = memo((props) => {
 
   return (
     <Flex
-      w={{ base: "100%", md: "700px" }}
-      h="100%"
+      w={{ base: "100%", md: "80vh" }}
+      h="100vh"
       borderX={{ base: "none", md: "1px" }}
       borderColor={{ md: "gray.200" }}
       flexDirection="column"
     >
+      {/* ヘッダー */}
       <Flex
         as="nav"
         w="100%"
         borderBottom="1px"
         borderColor="gray.200"
         // textAlign="left"
-        px="30px"
+        px="3%"
       >
         {/* ページタイトル */}
-        <Box my="12px" h="40px">
+        <Box my="1.5%" h="5%">
           {topic === "recent" ? (
             <HomePostTitle>最新の投稿</HomePostTitle>
           ) : topic === "follow_post" ? (
@@ -60,7 +61,7 @@ export const HomePostBox: VFC<Props> = memo((props) => {
             </Flex>
           )}
         </Box>
-
+        {/* メニューボタン（スマホサイズのときのみ出現） */}
         <HamburgerButton
           display={{ base: "inline", md: "none" }}
           onClick={onOpen}
@@ -69,15 +70,14 @@ export const HomePostBox: VFC<Props> = memo((props) => {
           size="sm"
         />
       </Flex>
-      {/* 投稿一覧 */}
+      {/* 投稿一覧部分 */}
       <Box
         h="100vh"
         w="100%"
         overflow="auto"
         flexDirection="column"
         align="center"
-        gap="10px"
-        pt="15px"
+        pt="2%"
       >
         {children}
       </Box>

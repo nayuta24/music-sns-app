@@ -23,20 +23,20 @@ export const PostCard: VFC<Props> = memo((props) => {
   };
 
   return (
-    <CardFrame mb="10px" onClick={onClickCard}>
+    <CardFrame mb="1.5%" onClick={onClickCard}>
       {/* 曲情報 */}
       <CardMusicBox img={track.img} title={track.title} artist={track.artist} />
       <Flex
         w="70%"
         h="100%"
         mr="auto"
-        flexDirection="column"
+        flexFlow="column"
         textAlign="left"
-        ml="30px"
+        ml="5%"
       >
         {/* コメント */}
         <CardComment title={review.title} body={review.body} />
-        <Flex>
+        <Flex mt="auto">
           <Box w="50%">
             {/* 評価 */}
             <Rating />
@@ -51,8 +51,7 @@ export const PostCard: VFC<Props> = memo((props) => {
             img={user.img}
             name={user.name}
             user_title={user.job}
-            pl="30px"
-            pt="20px"
+            pl="8%"
           />
         </Flex>
       </Flex>
