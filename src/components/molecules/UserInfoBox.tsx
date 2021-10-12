@@ -6,13 +6,12 @@ type Props = {
   name: string;
   user_title: string;
   pl?: string;
-  pt?: string;
 };
 
 export const UserInfoBox: VFC<Props> = memo((props) => {
-  const { img, name, user_title, pl = "0", pt = "0" } = props;
+  const { img, name, user_title, pl = "0" } = props;
   return (
-    <Flex w="50%" h="100%" pl={pl} pt={pt}>
+    <Flex h="70%" mt="auto" ml="auto">
       <Avatar bg="gray.400" size="sm" mr="10px" my="auto" src={img}></Avatar>
       <Flex flexDirection="column" my="auto" w="100px" alignItems="start">
         <Text fontSize="sm" w="100px" textAlign="left">

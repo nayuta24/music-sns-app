@@ -13,7 +13,7 @@ export const CardReactionButtons: VFC<Props> = memo((props) => {
   const { comment_val, like_val } = props;
 
   return (
-    <Flex mt="5px">
+    <Flex mt="2%">
       <Flex w="30%" mr="auto">
         <CommentButton value={comment_val} />
       </Flex>

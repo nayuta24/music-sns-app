@@ -13,10 +13,11 @@ export const CardFrame: VFC<Props> = memo((props) => {
   return (
     <Flex
       w="90%"
-      h="300px"
+      h="33vh"
       bg="white"
       borderRadius="10px"
       px="30px"
+      py="15px"
       shadow="md"
       mb={mb}
       _hover={{ cursor: "pointer", opacity: 0.8 }}
