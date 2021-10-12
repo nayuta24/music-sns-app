@@ -17,6 +17,7 @@ export const Recent = memo(() => {
   setTopic({ topic: "recent" });
   return (
     <Box>
+      {/* jsonを引っ張り、map関数でカードを繰り返し描画 */}
       {Posts.map((obj) => (
         <PostCard post={Object.assign(obj)} /> // Object.assign(オブジェクト)で、オブジェクトのスプレッドを実現
       ))}
